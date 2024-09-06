@@ -4,4 +4,13 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-structopt = "0.3.26"
+serde_json = "1.0"    # Adicione serde_json.
+structopt = "0.3"
+
+[dependencies.chrono]
+features = ["serde"]  # Também precisaremos do recurso serde para o chrono crate, para que possamos serializar o campo DateTime.
+version = "0.4"
+
+[dependencies.serde]  # Adicione serde em sua própria seção.
+features = ["derive"] # Precisaremos do recurso de derivação.
+version = "1.0"
